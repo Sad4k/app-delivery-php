@@ -7,55 +7,100 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Acerca de App Delivery PHP
+# App Delivery PHP
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+App Delivery PHP es una aplicación web desarrollada en **Laravel 12** que permite a los usuarios realizar pedidos de comida en línea de forma rápida y sencilla.  
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+El sistema cuenta con un panel de administración para la gestión de productos, barrios de entrega, pedidos, clientes y repartidores, ofreciendo una solución completa para servicios de delivery locales.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Requisitos
 
-## Learning Laravel
+Antes de comenzar, asegúrate de tener instalado:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **PHP** >= 8.2
+- **Composer** (para la gestión de dependencias de PHP)
+- **Laravel 12**
+- **Node.js** >= 23 (para la gestión de assets con Vite)
+- **NPM** o **Yarn**
+- **MySQL** o **MariaDB** (para la base de datos)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Instalación
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Sigue los pasos a continuación para instalar y ejecutar el proyecto en tu entorno local:
 
-## Laravel Sponsors
+1. **Clonar el repositorio:**
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+   ```bash
+   git clone https://github.com/tu-usuario/foodiedelivery.git
+   cd foodiedelivery
+   ```
 
-### Premium Partners
+2. **Instalar las dependencias de PHP:**
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+   ```bash
+   composer install
+   ```
 
-## Contributing
+3. **Instalar las dependencias de JavaScript:**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+   ```bash
+   npm install
+   ```
 
-## Code of Conduct
+4. **Configurar el archivo de entorno `.env`:**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+   Copia el archivo `.env.example` y renómbralo a `.env`:
 
-## Security Vulnerabilities
+   ```bash
+   cp .env.example .env
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+5. **Generar la clave de la aplicación:**
 
-## License
+   ```bash
+   php artisan key:generate
+   ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+6. **Configurar la base de datos:**
+
+   Edita el archivo `.env` y actualiza las variables relacionadas con la conexión a la base de datos:
+
+   ```
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=nombre_de_tu_base_de_datos
+   DB_USERNAME=tu_usuario
+   DB_PASSWORD=tu_contraseña
+   ```
+
+7. **Ejecutar migraciones:**
+
+   ```bash
+   php artisan migrate
+   ```
+
+8. **Compilar los assets:**
+
+   Para desarrollo:
+
+   ```bash
+   npm run dev
+   ```
+
+   Para producción:
+
+   ```bash
+   npm run build
+   ```
+
+9. **Levantar el servidor de desarrollo:**
+
+   ```bash
+   php artisan serve
+   ```
+
+Ahora puedes acceder a la aplicación en `http://localhost:8000`.
+
+
